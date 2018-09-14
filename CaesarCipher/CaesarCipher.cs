@@ -10,7 +10,7 @@ namespace CaesarCipher
             string result="";
             for (int i = 0; i < text.Length; i++)
             {
-                int temp=Convert.ToInt32(text[i]);
+                int temp=text[i];
                 if(Enumerable.Range(65,26).Contains(temp))
                 {
                     temp=temp+shiftKey-65;
