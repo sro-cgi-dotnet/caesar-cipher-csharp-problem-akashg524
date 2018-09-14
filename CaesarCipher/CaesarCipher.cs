@@ -1,36 +1,36 @@
 ﻿using System;
 using System.Linq;
-
+using System.Text;
 namespace CaesarCipher
 {
     public static class RotationalCipher
     {
         public static string Rotate(string text, int shiftKey)
         {
-            string result="";
+            StringBuilder result=new StringBuilder();
             for (int i = 0; i < text.Length; i++)
             {
                 int temp=text[i];
                 if(Enumerable.Range(Convert.ToInt32('A'),26).Contains(temp))
                 {
-                    temp=temp+shiftKey-65;
+                    temp=temp+shiftKey-Convert.ToInt32('A');
                     temp=temp%26;
-                    temp+=65;
-                    result+=(char)temp;
+                    temp+=Convert.ToInt32('A');
+                    result.Append((char)temp);
                 }
                 else if(Enumerable.Range(Convert.ToInt32('a'),26).Contains(temp))
                 {
-                    temp=temp+shiftKey-97;
+                    temp=temp+shiftKey-Convert.ToInt32('a');
                     temp=temp%26;
-                    temp+=97;
-                    result+=(char)temp;
+                    temp+=Convert.ToInt32('a');
+                    result.Append((char)temp);
                 }
                 else
                 {
-                    result+=text[i];
+                    result.Append((char)temp);
                 }
             }
-            return result;
+            return result.ToString();
         }
     }
 }
