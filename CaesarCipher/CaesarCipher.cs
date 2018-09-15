@@ -30,7 +30,7 @@ namespace CaesarCipher
                     result.Append((char)temp);
                 }
             }
-            return result.ToString();
+            return result.ToString();//to convert stringbuilder to string type
         }
     }
 }
